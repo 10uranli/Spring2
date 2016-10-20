@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/jsp1/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<!-- Bu kısım controller1-2 ve page 1-2 için -->
+	<!-- <bean -->
+	<!-- class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" 
+		/> -->
+
+	<!-- <bean name="/page1" class="SpringController.Controller1" /> -->
+	<!-- <bean name="/page2*" class="SpringController.Controller2" /> -->
+
+<!-- PersonInfo TeamInfo.jsp ve PersonInfoContro TeamInfoCont ile calısır -->
+<!-- 
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+		key'ler url karşılık gelmekte.teamController ise TeamInfoController bean id dir.
+				<prop key="/teamUrl">teamController</prop>
+				<prop key="/personUrl">personController</prop>	
+			</props>
+		</property>
+	</bean>
+	<bean class="SpringController.TeamInfoController" id="teamController"/>
+	<bean class="SpringController.PersonInfoController" id="personController"/>4 
+	-->
+	
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+	<bean class="SpringController.LoginController"/>
+</beans>
